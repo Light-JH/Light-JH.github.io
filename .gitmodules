@@ -1,3 +1,4 @@
 [submodule "conFusion"]
 	path = conFusion
 	url = https://github.com/Light-JH/conFusion.git
+	branch = pages
