@@ -1,0 +1,10 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'phoebehu dev-log'
+theme = 'liftoff'
+staticDir = 'static'
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "600s"

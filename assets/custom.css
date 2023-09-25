@@ -1,0 +1,5 @@
+/* Light AND dark theme override */
+:root,
+[data-theme="dark"] {
+    background-color: #222222;
+}

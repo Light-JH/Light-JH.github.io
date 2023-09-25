@@ -1,0 +1,6 @@
+{{ $user := index .Params 0 }}
+{{ $url := printf "https://github.com/ryoqun" $user}}
+<link rel="stylesheet" href="/styles.css">
+<a href="{{ $url }}" class="github-user-link">
+  @{{ $user }}
+</a>

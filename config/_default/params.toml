@@ -1,0 +1,16 @@
+footer_socials = true
+custom_css = "custom.css"
+
+# Enable or disable individual social icons
+[social.links]
+github = "Light-JH"
+
+[social.share]
+twitter = false
+github = true
+email = false
+linkedin = false
+
+[mermaid]
+theme = "dark"
+align = "center"

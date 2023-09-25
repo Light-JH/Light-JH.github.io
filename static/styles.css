@@ -1,0 +1,57 @@
+/* Style the GitHub issue container */
+.github-issue {
+    display: inline;
+    color: #fff;
+    border-radius: 3px;
+}
+
+/* Style the repository name and issue/PR number */
+.github-issue-header {
+    display: inline;
+    font-weight: bold;
+}
+
+.github-issue-repo {
+    color: #999;
+}
+
+.github-issue-number {
+    margin-left: 0px;
+}
+
+/* Style the issue/PR title */
+.github-issue-title {
+    display: inline;
+}
+
+/* Style the status symbols */
+.github-issue-status {
+    display: inline;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.github-issue-status-closed {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.github-issue-status-merged {
+    background-color: #9c27b0;
+    color: #fff;
+}
+
+.github-issue-status-open {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.github-issue-status-draft {
+    background-color: #808080;
+    color: #fff;
+}

@@ -1,0 +1,27 @@
+{{ $repo := index .Params 0 }}
+{{ $issueNumber := index .Params 1 }}
+{{ $url := printf "https://api.github.com/repos/%s/issues/%d" $repo $issueNumber }}
+{{ $data := getJSON $url }}
+<link rel="stylesheet" href="/styles.css">
+<a href="{{ $data.html_url }}" class="github-issue-link">
+    <div class="github-issue">
+        <div class="github-issue-header">
+            <span class="github-issue-repo">{{ $repo }}</span>
+            <span class="github-issue-number">#{{ $issueNumber }}</span>
+            {{ if eq $data.state "closed" }}
+            {{ if eq $data.pull_request.merged_at "null" }}
+            <span class="github-issue-status  github-issue-status-closed">Closed</span>
+            {{ else }}
+            <span class="github-issue-status github-issue-status-merged">Merged</span>
+            {{ end }}
+            {{ else }}
+            {{ if eq $data.draft true}}
+            <span class="github-issue-status github-issue-status-draft">Draft</span>
+            {{ else }}
+            <span class="github-issue-status github-issue-status-open">Open</span>
+            {{ end }}
+            {{end}}
+        </div>
+        <div class="github-issue-title"> - {{ $data.title }}</div>
+    </div>
+</a>

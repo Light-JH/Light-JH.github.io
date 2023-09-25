@@ -1,0 +1,24 @@
+<section class="section">
+    <div class="home-title-dropdown">
+        <h2 class="home-section-posts-title">
+            {{- with $.Page.Params.logs_section_heading -}}
+            {{- . -}}
+            {{- else -}}
+            Recent Logs
+            {{- end -}}
+        </h2>
+    </div>
+    {{ $num := .Get 0 }}
+    {{ if not $num }}
+    {{ $num = 10 }}
+    {{ end }}
+    {{ range (where site.RegularPages "Section" "logs" | first $num) }}
+    <div class="post-entry-filter entry--{{ replace .CurrentSection.RelPermalink " /" "" | lower }}">
+        {{ partial "posts/post-entry.html" . }}
+        <div class="post-entry-divider"></div>
+    </div>
+    {{ else }}
+    {{ partial "general/fallback-text.html" . }}
+    {{ end }}
+    <a class="btn-secondary see-more" href="{{ " logs/" | relURL }}">More Logs</a>
+</section>
